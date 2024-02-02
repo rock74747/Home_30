@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <fstream>
 #include <string>
 
@@ -23,35 +23,35 @@ bool overwrite(std::string put, std::string str) {
 int main()
 {
 	system("chcp 1251>null");
-	std::cout << "Çàäà÷à 1 \n";
+	std::cout << "Ð—Ð°Ð´Ð°Ñ‡Ð° 1 \n";
 
 	std::ofstream out;
 	out.open("file.txt", std::ios::app);
 	if (out.is_open()) {
-		std::cout << "Ôàéë îòêðûò\n";
+		std::cout << "Ð¤Ð°Ð¹Ð» Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚\n";
 	}
 	else
-		std::cout << "Îøèáêà îòêðûòèÿ ôàéëà\n";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°\n";
 
 	if (out.is_open()) {
 		std::string input;
 		do {
-			std::cout << "Ââåäèòå ñòðîêó: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ‚Ñ€Ð¾ÐºÑƒ: ";
 			std::getline(std::cin, input);
 			out << input << "\n";
 		} while (input != "end");
 	}
 	else
-		std::cout << "Îøèáêà îòêðûòèÿ ôàéëà\n";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°\n";
 	out.close();
 
 	std::ifstream in;
 	in.open("file.txt");
 	if (in.is_open()) {
-		std::cout << "Ôàéë îòêðûò\n";
+		std::cout << "Ð¤Ð°Ð¹Ð» Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚\n";
 	}
 	else
-		std::cout << "Îøèáêà îòêðûòèÿ ôàéëà\n";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°\n";
 	if (in.is_open()) {
 		std::string str;
 		while (std::getline(in, str)) {
@@ -59,18 +59,18 @@ int main()
 		}
 	}
 	else
-			std::cout << "Îøèáêà îòêðûòèÿ ôàéëà\n";
+			std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°\n";
 	in.close();
 	remove("file.txt");
 	
 
-	std::cout << "Çàäà÷à 2 \n";
+	std::cout << "Ð—Ð°Ð´Ð°Ñ‡Ð° 2 \n";
 	
 	std::string put;
-	std::cout << "Ââåäèòå ïóòü ê ôàéëó: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÑ‚ÑŒ Ðº Ñ„Ð°Ð¹Ð»Ñƒ: ";
 	std::getline(std::cin, put);
 	std::string str;
-	std::cout << "Ââåäèòå ñòðîêó: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ‚Ñ€Ð¾ÐºÑƒ: ";
 	std::getline(std::cin, str);
 	std::cout << overwrite(put, str);
 
